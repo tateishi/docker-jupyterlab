@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  lab:
+    build:
+      context: lab
+      args:
+        - PASSWD=${PASSWD}
+    ports:
+      - 8888:8888
+    volumes:
+      - code:/home/jovyan/work
+    entrypoint: start.sh jupyter lab
+
+volumes:
+  code:
