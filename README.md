@@ -6,7 +6,7 @@
 python -c 'from notebook.auth import passwd;print(passwd())'
 ```
 
-- 得られた文字列を ```.env``` ファイルに次のように記述する。
+- ファイル'.env'へ、得られた文字列を次のように記述する。
 ```
-PASSWD = "得られた文字列"
+PASSWD=得られた文字列
 ```
