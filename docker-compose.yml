@@ -1,17 +1,17 @@
-version: '3.7'
+version: '3.9'
 
 services:
   lab:
+    env_file: .env
     build:
-      context: lab
+      context: ./lab
       args:
         - PASSWD=${PASSWD}
-    restart: always
     ports:
-      - 80:8888
+      - "8888:8888"
     volumes:
-      - code:/home/jovyan/work
-    entrypoint: start.sh jupyter lab
+      - work:/home/jovyan/work
+
 
 volumes:
-  code:
+  work:
