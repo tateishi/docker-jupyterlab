@@ -11,7 +11,9 @@ services:
       - "8888:8888"
     volumes:
       - work:/home/jovyan/work
+      - conf:/home/jovyan/.jupyter
 
 
 volumes:
   work:
+  conf:
