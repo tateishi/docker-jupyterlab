@@ -11,10 +11,5 @@ RUN cd .jupyter && jupyterhub --generate-config
 
 RUN echo "c.JupyterHub.authenticator_class='jupyterhub.auth.DummyAuthenticator'" >> /home/jovyan/.jupyter/jupyterhub_config.py
 
-RUN echo '{' >  /home/jovyan/.jupyter/jupyter_server_config.json
-RUN echo '  "IdentityProvider": {' >>  /home/jovyan/.jupyter/jupyter_server_config.json
-RUN echo -n '    "hashed_password": "' >>  /home/jovyan/.jupyter/jupyter_server_config.json
-RUN echo -n "${PASSWD}" >>  /home/jovyan/.jupyter/jupyter_server_config.json
-RUN echo '"' >>  /home/jovyan/.jupyter/jupyter_server_config.json
-RUN echo '  }' >>  /home/jovyan/.jupyter/jupyter_server_config.json
-RUN echo '}' >>  /home/jovyan/.jupyter/jupyter_server_config.json
+RUN printf '{\n  "IdentityProvider": {\n    "hashed_password": "%s"\n  }\n}\n' "${PASSWD}" > /home/jovyan/.jupyter/jupyter_server_config.json
+
