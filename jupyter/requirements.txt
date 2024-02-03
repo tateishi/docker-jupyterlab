@@ -1,1 +1,8 @@
+Jinja2
 jupyterlab
+matplotlib
+networkx
+numpy
+pandas
+pulp
+seaborn
