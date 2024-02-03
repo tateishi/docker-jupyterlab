@@ -1,0 +1,11 @@
+services:
+  jupyter:
+    build:
+      context: jupyter
+    ports:
+      - 80:80
+    volumes:
+      - data:/home/ubuntu
+
+volumes:
+  data:

@@ -1,12 +1,13 @@
 # docker-jupyterlab
 
 ### パスワードの設定方法
-- コンテナ内で次を実行し、パスワードを２回入力する。
+
+1. コンテナ内の bash を起動する
 ```bash
-python -c 'from notebook.auth import passwd;print(passwd())'
+docker exec -it <container name> /bin/bash
 ```
 
-- ファイル'.env'へ、得られた文字列を次のように記述する。
-```
-PASSWD=得られた文字列
+2.コンテナ内で次のコマンドでパスワードを設定する
+```bash
+jupyter lab password
 ```
