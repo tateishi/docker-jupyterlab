@@ -1,8 +1,16 @@
 Jinja2
+isort
+japanize_matplotlib
 jupyterlab
 matplotlib
 networkx
 numpy
+openpyxl
 pandas
+pandas_datareader
 pulp
+pyarrow
+regex
 seaborn
+transitions
+yfinance[optional]
