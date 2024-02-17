@@ -2,6 +2,7 @@ services:
   jupyter:
     build:
       context: jupyter
+    restart: always
     ports:
       - 80:80
     volumes:
